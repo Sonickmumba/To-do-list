@@ -5,7 +5,6 @@ body {
 #main-container {
   width: 55%;
   padding: 20px 5%;
-  /* max-height: 300px; */
   overflow: hidden;
   cursor: pointer;
   transition: padding 300ms ease-in-out, max-height 500ms ease-in-out;
@@ -18,8 +17,7 @@ body {
   display: flex;
   flex-direction: column;
   width: 100%;
-  /* max-width: 500px; */
-  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   box-sizing: border-box;
   border-radius: 3px;
 }
@@ -50,7 +48,6 @@ body {
 }
 
 #add-item li {
-  padding: 0;
   background-color: #fff;
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
   padding: 10px;
@@ -65,16 +62,13 @@ body {
 #new-item {
   font-size: 1rem;
   font-style: italic;
+  border: 0;
 }
 
 #enter-button {
   border: 0;
   background-color: #fff;
   cursor: pointer;
-}
-
-#new-item {
-  border: 0;
 }
 
 #item-list {
