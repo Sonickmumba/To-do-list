@@ -30,27 +30,15 @@ Check **Live Demo** [here.](https://sonickmumba.github.io/To-do-list/)
 - Open the terminal.
 - Run cd \path\to\where\you\want\your\local\copy
 - Clone the repo
-   i. Run git@github.com:Sonickmumba/My-Portfolio.git
+   i. Run git@github.com:Sonickmumba/To-do-list.git
    ii. Run cd README/
 
 ### Install
 
-- install Webhint linter
-    i. Run npm install --save-dev hint@6.x
-
-- install Stylelint linter
-    i. Run npm install --save-dev stylelint@13.x stylelint-scss@3.x stylelint-config-standard@21.x stylelint-csstree-validator@1.x
-
-- install ESLint linter
-    i. Run npm install --save-dev eslint@7.x eslint-config-airbnb-base@14.x eslint-plugin-import@2.x babel-eslint@10.x
-
-- install gulp
-    i. Run touch gulpfile.js
-    ii. Run npm install gulp --save-dev
-    iii. Run npm install gulp-autoprefixer --save-dev
-
+- npm install 
+- npm run start
 ### Usage
-
+- Run npm start
 ### Run tests
 
 - run Webhint linter
