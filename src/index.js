@@ -2,7 +2,7 @@
 import './style.css';
 import editFunction from './modules/editFunction.js';
 import displayTask from './modules/displayTask.js';
-
+import completedTask from './modules/completedTask.js';
 import tasksMenu from './modules/taskMenu.js';
 
 const listContainer = document.querySelector('.todo-list-container');
@@ -90,3 +90,4 @@ displayTaskFromStore();
 editFunction();
 
 tasksMenu();
+completedTask();
