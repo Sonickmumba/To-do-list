@@ -26,17 +26,11 @@ Check **Live Demo** [here.](https://sonickmumba.github.io/To-do-list/)
 - A github Account – to be able to use github actions.
 
 ### Setup
+Use 'git clone https://git@github.com:Sonickmumba/To-do-list.git' to clone the repository to your local environment and begin working on it.
+- run **'npm init'** to install dependancy packages.
+- run **'npm run build'** to build the project and to generate dist files.
+- run **'npm start'** to run you project in development mode.
 
-- Open the terminal.
-- Run cd \path\to\where\you\want\your\local\copy
-- Clone the repo
-   i. Run git@github.com:Sonickmumba/To-do-list.git
-   ii. Run cd README/
-
-### Install
-
-- npm install 
-- npm run start
 ### Usage
 - Run npm start
 ### Run tests
@@ -68,6 +62,10 @@ To run the project open the downloaded folder (after extraction) then run the "*
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
+
+## Acknowledgement
+
+Matt Shwery [@mshwery](https://web.archive.org/web/20190228042842/https://twitter.com/mshwery) for the Design used.
 
 ## Show your support
 
