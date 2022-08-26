@@ -14,7 +14,7 @@
 
 ## Live Demo
 
-Check **Live Demo** [here.](https://sonickmumba.github.io/To-do-list/dist/)
+Check **Live Demo** [here.]()
 
 ## Getting Started
 
