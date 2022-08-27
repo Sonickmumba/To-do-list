@@ -24,6 +24,7 @@ const completedTask = () => {
   const clearAllCompleted = document.querySelector('.clear-button');
   clearAllCompleted.addEventListener('click', () => {
     clearCompletedTasks();
+    window.location.reload();
   });
 };
 
