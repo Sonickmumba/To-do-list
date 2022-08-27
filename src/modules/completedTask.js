@@ -1,4 +1,3 @@
-import remove from './remove.js';
 let storedTasks = JSON.parse(localStorage.getItem('tasks'));
 
 const completedTask = () => {
