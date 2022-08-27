@@ -1,3 +1,4 @@
+import remove from './remove.js';
 let storedTasks = JSON.parse(localStorage.getItem('tasks'));
 
 const completedTask = () => {
@@ -24,6 +25,7 @@ const completedTask = () => {
   const clearAllCompleted = document.querySelector('.clear-button');
   clearAllCompleted.addEventListener('click', () => {
     clearCompletedTasks();
+    window.location.reload();
   });
 };
 
