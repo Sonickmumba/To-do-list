@@ -1,4 +1,3 @@
-// const storedTasks = JSON.parse(localStorage.getItem('tasks'));
 const remove = () => {
   const taskShelf = [];
   if (taskShelf.length > 0) {

@@ -1,5 +1,3 @@
-// let storedTasks = JSON.parse(localStorage.getItem('tasks'));
-
 const editTask = (taskId, taskDescription) => {
   let storedTasks = JSON.parse(localStorage.getItem('tasks'));
   storedTasks = storedTasks.map((task) => {
