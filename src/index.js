@@ -1,72 +1,13 @@
-// import _ from 'lodash';
 import './style.css';
-import editFunction from './modules/editFunction.js';
-import displayTask from './modules/displayTask.js';
-import completedTask from './modules/completedTask.js';
-import tasksMenu from './modules/taskMenu.js';
+import TodoTasks from './modules/todoTasks.js';
+import editResponse from './modules/editResponse.js';
 
-const listContainer = document.querySelector('.todo-list-container');
 const enterButton = document.querySelector('#enter-button');
 const refreshBtn = document.getElementById('refresh-buttton');
 const newTaskInput = document.getElementById('new-item');
-const storedTasks = JSON.parse(localStorage.getItem('tasks'));
-let taskShelf = [];
+let storedTasks = JSON.parse(localStorage.getItem('tasks'));
 
-const add = () => {
-  if (newTaskInput.value !== '') {
-    const currentTask = [];
-    currentTask.push(
-      {
-        description: newTaskInput.value,
-        completed: false,
-        index: 1,
-      },
-    );
-    taskShelf.push(
-      {
-        description: newTaskInput.value,
-        completed: false,
-        index: currentTask[currentTask.length - 1].index + 1,
-      },
-    );
-    for (let i = 0; i < taskShelf.length; i += 1) {
-      taskShelf[i].index = i + 1;
-    }
-    if (taskShelf.length > 0) {
-      currentTask.forEach((task) => listContainer.insertAdjacentHTML('beforeend', displayTask(task)));
-    }
-  }
-  newTaskInput.value = '';
-  localStorage.setItem('tasks', JSON.stringify(taskShelf));
-};
-
-const remove = () => {
-  if (taskShelf.length > 0) {
-    const storedTasks = JSON.parse(localStorage.getItem('tasks'));
-    let taskShelf = [];
-    taskShelf = storedTasks;
-    const deleteBtn = document.querySelectorAll('.uil-trash1');
-    deleteBtn.forEach((element) => element.addEventListener('click', () => {
-      element.closest('.todo').remove();
-      taskShelf = taskShelf.filter((x) => x.description !== element.closest('.todo').getElementsByTagName('input')[1].value);
-      for (let i = 0; i < taskShelf.length; i += 1) {
-        taskShelf[i].index = i + 1;
-      }
-      localStorage.setItem('tasks', JSON.stringify(taskShelf));
-      window.location.reload();
-    }));
-  }
-};
-
-const displayTaskFromStore = () => {
-  if (storedTasks !== null) {
-    taskShelf = storedTasks;
-    taskShelf.forEach((task) => {
-      listContainer.insertAdjacentHTML('beforeend', displayTask(task));
-      remove();
-    });
-  }
-};
+const todoTask = new TodoTasks();
 
 refreshBtn.addEventListener('click', (e) => {
   e.preventDefault();
@@ -82,12 +23,38 @@ newTaskInput.addEventListener('keypress', (e) => {
 
 enterButton.addEventListener('click', (e) => {
   e.preventDefault();
-  add();
+  todoTask.add();
+  todoTask.remove();
+  editResponse();
+});
+
+todoTask.displayTaskFromStore();
+
+const completedTask = (taskId, status) => {
+  const taskSelected = storedTasks.findIndex((task) => task.index === taskId);
+  storedTasks[taskSelected].completed = status;
+  localStorage.setItem('tasks', JSON.stringify(storedTasks));
+};
+
+const clearCompletedTasks = () => {
+  storedTasks = storedTasks.filter((task) => !task.completed);
+  storedTasks.forEach((task, index) => {
+    task.index = index + 1;
+  });
+  localStorage.setItem('tasks', JSON.stringify(storedTasks));
+};
+
+const tasksCheckInputs = document.querySelectorAll('.checkbox');
+tasksCheckInputs.forEach((checkInput) => {
+  checkInput.addEventListener('change', (e) => {
+    const taskId = e.target.id.replace('submit-new-item-', '');
+    completedTask(Number(taskId), e.target.checked);
+    e.target.parentNode.querySelector('.task').classList.toggle('checked');
+  });
+});
+
+const clearAllCompleted = document.querySelector('.clear-button');
+clearAllCompleted.addEventListener('click', () => {
+  clearCompletedTasks();
   window.location.reload();
 });
-displayTaskFromStore();
-
-editFunction();
-
-tasksMenu();
-completedTask();
