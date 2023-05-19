@@ -2,11 +2,9 @@ const displayTask = (object) => `<ul id="item-list" class="items">
         <li class="todo">
           <input id="submit-new-item-${object.index}" type="checkbox" title="" class="checkbox" name="checkbox-${object.index}" />
           <input class="task" id="label-checkbox-${object.index}" value ='${object.description}' type='text'/>
-        
           <div class='drag'>
             <button type='button' id='delete'>Delete</button>
           </div>
-          
         </li>
       </ul>`;
 
