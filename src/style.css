@@ -13,7 +13,7 @@ body {
   transition: padding 300ms ease-in-out, max-height 500ms ease-in-out;
   transform: translate3d(0, 0, 0);
   background-color: rgb(246, 246, 246);
-  margin: 0 auto;
+  margin: 150px auto;
 }
 
 .selected-list {
