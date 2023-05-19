@@ -22,7 +22,3 @@ export default displayTask;
             </ul>
             <i class="material-symbols-outlined" id='threeBtn'>more_vert</i>
           </div> */
-
-/* <div class='drag'>
-            <span><i class="uil uil-trash"></i>Delete</span>
-          </div> */
